@@ -10,17 +10,16 @@ const LeftArrow = () => {
 
     return (
         <Typography onClick={() => scrollPrev()} className="right-arrow">
-            <img src={LeftArrowIcon} alt="right-arrow" />
+            <img src={LeftArrowIcon} alt="right-arrow" style={{ width: "25px" }} />
         </Typography>
     );
 };
 
 const RightArrow = () => {
     const { scrollNext } = useContext(VisibilityContext);
-
     return (
         <Typography onClick={() => scrollNext()} className="left-arrow">
-            <img src={RightArrowIcon} alt="right-arrow" />
+            <img src={RightArrowIcon} alt="right-arrow" style={{ width: "25px" }} />
         </Typography>
     );
 };
@@ -33,6 +32,11 @@ function HorizontalScrollBar({ data, bodyPart, setBodyPart }) {
                     itemId={item.id || item}
                     title={item.id || item}
                     m="0 40px"
+                    sx={{
+                        width: 300,
+                        alignContent: 'center'
+                    }}
+
                 >
                     <BodyPart item={item} bodyPart={bodyPart} setBodyPart={setBodyPart} />
                 </Box>
